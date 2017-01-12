@@ -24,3 +24,6 @@ for file in $files; do
     echo "Copy $file in home directory."
     cp $dir/$file ~/.$file
 done
+
+# clone Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
