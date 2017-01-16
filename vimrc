@@ -5,10 +5,10 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
 
 set number
 
