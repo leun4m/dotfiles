@@ -31,6 +31,7 @@ nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 
+:imap ;; <Esc> 
 "Backspace behaves as expected
 set backspace=indent,eol,start
 
