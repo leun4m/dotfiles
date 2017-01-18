@@ -45,9 +45,11 @@ set noerrorbells
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-
+plugin 'VundleVim/Vundle.vim'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+call vundle#end()
 " -- Syntax highliting --
 set background=dark
 colorscheme solarized

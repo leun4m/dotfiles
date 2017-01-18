@@ -26,9 +26,12 @@ done
 
 # clone Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#git clone https://github.com/airblade/vim-gitgutter.git ~/.vim/bundle/
 
 # copy solarized
-mkdir ~/.vim/autoload/
-mkdir ~/.vim/colors/
-cp togglebg.vim ~/.vim/autoload/togglebg.vim
-cp solarized.vim ~/.vim/colors/solarized.vim
+#mkdir ~/.vim/autoload/
+#mkdir ~/.vim/colors/
+#cp togglebg.vim ~/.vim/autoload/togglebg.vim
+#cp solarized.vim ~/.vim/colors/solarized.vim 
+
+
