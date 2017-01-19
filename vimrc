@@ -44,11 +44,12 @@ set noerrorbells
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
-plugin 'VundleVim/Vundle.vim'
 "Plugin 'Valloric/YouCompleteMe'
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 " -- Syntax highliting --
 set background=dark
