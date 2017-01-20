@@ -3,7 +3,7 @@
 ########## Variables
 dir=~/dotfiles                  # dotfiles directory
 olddir=~/dotfiles_old           # old dotfiles backup directory
-files="vimrc zshrc minttyrc"    # list of files/folders to copy in homedir
+files="vimrc zshrc minttyrc bashrc"    # list of files/folders to copy in homedir
 ##########
 
 # create dotfiles_old in homedir
@@ -34,4 +34,4 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 #cp togglebg.vim ~/.vim/autoload/togglebg.vim
 #cp solarized.vim ~/.vim/colors/solarized.vim 
 
-
+source ~/.bashrc
