@@ -49,6 +49,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 call vundle#end()
 " -- Syntax highliting --
