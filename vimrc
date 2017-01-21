@@ -52,6 +52,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 call vundle#end()
+
+set updatetime=250  "for gitgutter
 " -- Syntax highliting --
 set background=dark
 colorscheme solarized
