@@ -35,6 +35,7 @@ nnoremap <right> <nop>
 "Backspace behaves as expected
 set backspace=indent,eol,start
 
+set mouse=a
 " -- Beep --
 "Prevent Vim from beepingOB
 set visualbell  
