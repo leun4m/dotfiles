@@ -14,7 +14,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-
+set laststatus=2
 "Hide buffer
 set hidden
 
@@ -52,9 +52,17 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 call vundle#end()
 
 set updatetime=250  "for gitgutter
+
+" Open/close NERDTree Tabs with \t
+nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+" To have NERDTree always open on startup
+let g:nerdtree_tabs_open_on_console_startup = 1
+
 " -- Syntax highliting --
 set background=dark
 colorscheme solarized
