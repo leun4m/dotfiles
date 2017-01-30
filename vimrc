@@ -45,8 +45,8 @@ set noerrorbells
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
-"Plugin 'Valloric/YouCompleteMe'
 call vundle#begin()
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
