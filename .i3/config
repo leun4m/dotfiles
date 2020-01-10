@@ -4,16 +4,16 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-set $left j
+set $left h
 set $up k
-set $down l
-set $right odiaeresis
+set $down j
+set $right l
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border pixel 2
 default_floating_border normal
 
 # Hide borders
@@ -49,7 +49,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 
 #exec --no-startup-id volumeicon
 #bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-exec --no-startup-id pulseaudio
+exec --no-startup-id pulseaudio --start
 exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
@@ -74,6 +74,7 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+P exec ls .screenlayout/ | rofi -dmenu -p "Display Mode" -theme .config/rofi.rasi | (echo -n .screenlayout/ && cat) | sh
 
 # focus_follows_mouse no
 
@@ -107,8 +108,6 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -151,7 +150,7 @@ set $ws2 2
 set $ws3 3
 set $ws4 4
 set $ws5 5
-set $ws6 6
+set $ws6 6:chat
 set $ws7 7:music
 set $ws8 8:mail
 
@@ -187,6 +186,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
 assign [class="Thunderbird"] $ws8
+assign [class="telegram-desktop"] $ws6
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
@@ -219,7 +219,11 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+
 for_window [class="Spotify"] move to workspace $ws7
+assign [instance="telegram-desktop"] $ws6
+
+for_window [class="jetbrains-.*" title="win0"] floating enable border none
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -331,6 +335,7 @@ set $mk-c3 #2d8d09
 set $mk-c4 #1d6b00 
 set $mk-bg #111111
 set $mk-b2 #333333
+set $mk-b3 #336633
 set $mk-a1 #e5201d
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
@@ -367,11 +372,11 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          $mk-c2 #556064 #80FFF9 $mk-c3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C $mk-c3
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C $mk-c3
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C $mk-c3
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.focused          $mk-bg $mk-bg $mk-c2 $mk-c1 $mk-b3
+  client.focused_inactive $mk-bg $mk-bg $mk-c4 $mk-bg $mk-bg
+  client.unfocused        $mk-b2 $mk-bg $mk-c4 $mk-bg $mk-bg
+  client.urgent           $mk-a1 $mk-bg $mk-c4 $mk-bg $mk-bg
+  client.placeholder      $mk-c1 $mk-bg #ffffff #000000 
 
   client.background       #2B2C2B
 
