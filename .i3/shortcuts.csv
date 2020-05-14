@@ -3,7 +3,7 @@ ESC,,,
 Backspace,,,
 Enter,Open new terminal,,
 Space,Toggle focus,Toggle floating,
-Print,Take screenshot (W),Take Screenshot (custom area),Take screenshot (D)
+Print,Take screenshot (window),Take screenshot (area),Take screenshot (ws)
 ,,,
 F1,Show help,,
 F2,,,
@@ -18,14 +18,14 @@ F10,,,
 F11,,,
 F12,,,
 ,,,
-1,Switch to D1,Switch W to D1,Move W to D1
-2,Switch to D2,Switch W to D2,Move W to D2
-3,Switch to D3,Switch W to D3,Move W to D3
-4,Switch to D4,Switch W to D4,Move W to D4
-5,Switch to D5,Switch W to D5,Move W to D5
-6,Switch to D6,Switch W to D6,Move W to D6
-7,Switch to D7,Switch W to D7,Move W to D7
-8,Switch to D8,Switch W to D8,Move W to D8
+1,Switch to ws1,Switch window to ws1,Move window to ws1
+2,Switch to ws2,Switch window to ws2,Move window to ws2
+3,Switch to ws3,Switch window to ws3,Move window to ws3
+4,Switch to ws4,Switch window to ws4,Move window to ws4
+5,Switch to ws5,Switch window to ws5,Move window to ws5
+6,Switch to ws6,Switch window to ws6,Move window to ws6
+7,Switch to ws7,Switch window to ws7,Move window to ws7
+8,Switch to ws8,Switch window to ws8,Move window to ws8
 9,Lock screen,,
 0,Shutdown / Logout / Reboot,,
 ,,,
@@ -35,9 +35,9 @@ w,Change layout to tabbed,,
 e,Change layout to split,Exit,
 r,Resize,Restart i3,
 t,Open thunar,,
-z,,,
-u,,,
-i,,,
+z,Open firefox,,
+u,Open chromium,,
+i,Open thunderbird,,
 o,,,
 p,Change display layout,,Change display settings
 ,,,
@@ -57,7 +57,7 @@ c,Open calculator,Reload i3 config,
 v,,,
 b,,,
 n,,,
-m,,,
+m,Toggle bar,,
 ,,,
 -,Minimize,Restore minimized,
 ,,,

@@ -94,6 +94,8 @@ bindsym $mod+F1 exec xdg-open ~.i3/shortcuts.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+P exec ls .screenlayout/ | rofi -dmenu -p "Display Mode" -theme .config/rofi.rasi | (echo -n .screenlayout/ && cat) | sh
 bindsym $mod+Ctrl+P exec --no-startup-id arandr
+bindsym $mod+Z exec firefox
+bindsym $mod+U exec chromium
 
 bindsym $mod+T exec --no-startup-id thunar
 
