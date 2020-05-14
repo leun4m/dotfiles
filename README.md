@@ -2,5 +2,5 @@
 
 by leun4m
 
-[Shortcut Table](docs/shortcuts.csv)
+[Shortcut Table](.i3/shortcuts.csv)
 
