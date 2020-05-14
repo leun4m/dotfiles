@@ -25,7 +25,7 @@ update_env()
 	copy_files termite .config/termite/ ~/.config/
 }
 
-# Will update the dotfile
+# Will update the dotfile repo
 update_dotfiles()
 {
 	echo
@@ -42,17 +42,21 @@ update_dotfiles()
 choose_direction ()
 {
 	while true; do
-		echo "1] ENV  -> REPO"
-		echo "2] REPO -> ENV"
-		read -p "Which direction? [1 2]" menu
+		echo "1) ENV  -> REPO"
+		echo "2) REPO -> ENV"
+		echo "c) Abort"
+		read -p "Which direction?" menu
 		case $menu in
 			[1]* ) update_dotfiles; break;;
 			[2]* ) update_env; break;;
+			[Cc]* ) exit;;
 			*) echo "Please answer 1 or 2!";;
 		esac
 	done
 }
 
 echo "COPY DOTFILES"
+echo
 
 choose_direction
+
