@@ -6,8 +6,8 @@
 # $3 => destination path
 copy_files ()
 {
-	read -p "Do you wish to update $1? [yN]" yn
-	case $yn in
+	read -p "Do you wish to update $1? [yN]" ANSWER
+	case $ANSWER in
 		[Yy]* ) cp --recursive $2 $3;;
 		* ) echo "$1 ignored";;
 	esac
@@ -31,11 +31,11 @@ update_dotfiles()
 	echo
 	echo "Updating ~ => dotfiles"
 	echo
-	dotdir=$( dirname $0 )
-	copy_files i3 ~/.i3/ $dotdir
-	copy_files Xresources ~/.Xresources $dotdir
-	copy_files rofi ~/.config/rofi.rasi "$dotdir/.config"
-	copy_files termite ~/.config/termite "$dotdir/.config"
+	DOTDIR=$( dirname $0 )
+	copy_files i3 ~/.i3/ $DOTDIR
+	copy_files Xresources ~/.Xresources $DOTDIR
+	copy_files rofi ~/.config/rofi.rasi "$DOTDIR/.config"
+	copy_files termite ~/.config/termite "$DOTDIR/.config"
 }
 
 # Choose copy direction
@@ -45,8 +45,8 @@ choose_direction ()
 		echo "1) ENV  -> REPO"
 		echo "2) REPO -> ENV"
 		echo "c) Abort"
-		read -p "Which direction?" menu
-		case $menu in
+		read -p "Which direction?" MENU
+		case $MENU in
 			[1]* ) update_dotfiles; break;;
 			[2]* ) update_env; break;;
 			[Cc]* ) exit;;
