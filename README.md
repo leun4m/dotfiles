@@ -1,6 +1,8 @@
 # dotfiles
 
-by leun4m
+_by leun4m_
 
-[Shortcut Table](.i3/shortcuts.csv)
+Feel free to use and adopt.
+
+[i3 shortcut overview](.i3/shortcuts.csv)
 
