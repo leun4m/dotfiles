@@ -23,6 +23,7 @@ update_env()
 	copy_files Xresources .Xresources ~
 	copy_files rofi .config/rofi.rasi ~/.config/
 	copy_files termite .config/termite/ ~/.config/
+	copy_files nvim .config/nvim/init.vim ~/.config/nvim/
 }
 
 # Will update the dotfile repo
@@ -36,6 +37,7 @@ update_dotfiles()
 	copy_files Xresources ~/.Xresources $DOTDIR
 	copy_files rofi ~/.config/rofi.rasi "$DOTDIR/.config"
 	copy_files termite ~/.config/termite "$DOTDIR/.config"
+	copy_files nvim ~/.config/nvim/init.vim "$DOTDIR/.config/nvim"
 }
 
 # Choose copy direction
