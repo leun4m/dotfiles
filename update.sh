@@ -1,15 +1,18 @@
 #!/bin/bash
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
 # Asks for copying files to home
 # $1 => configuration name
 # $2 => source path
 # $3 => destination path
 copy_files ()
 {
-	read -p "Do you wish to update $1? [yN]" ANSWER
+	read -p "Do you wish to update ${bold}$1${normal}? [yN]" ANSWER
 	case $ANSWER in
 		[Yy]* ) cp --recursive $2 $3;;
-		* ) echo "$1 ignored";;
+		* ) echo " $1 ignored";;
 	esac
 }
 
@@ -47,6 +50,7 @@ choose_direction ()
 		echo "1) ENV  -> REPO"
 		echo "2) REPO -> ENV"
 		echo "c) Abort"
+		echo 
 		read -p "Which direction?" MENU
 		case $MENU in
 			[1]* ) update_dotfiles; break;;
@@ -57,8 +61,11 @@ choose_direction ()
 	done
 }
 
+clear
 echo "COPY DOTFILES"
+echo "============="
 echo
+
 
 choose_direction
 
