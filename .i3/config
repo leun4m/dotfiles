@@ -1,5 +1,6 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
+exec --no-startup-id feh --bg-scale Pictures/wallpaper.jpg
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -367,7 +368,7 @@ set $mk-a1 #e5201d
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar { 
 	i3bar_command i3bar
-	status_command i3status #--config ~.i3/status.conf
+	status_command i3status --config ~/.i3/status.conf
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
