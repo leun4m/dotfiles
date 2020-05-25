@@ -1,5 +1,6 @@
 [options]
-font = Hermit 12
+font = Hermit 13
+audible_bell = true
 
 [colors]
 
