@@ -399,7 +399,7 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          $mk-bg $mk-bg $mk-c2 $mk-c1 $mk-b3
+  client.focused          $mk-a1 $mk-bg $mk-c2 $mk-bg $mk-c1
   client.focused_inactive $mk-bg $mk-bg $mk-c4 $mk-bg $mk-bg
   client.unfocused        $mk-b2 $mk-bg $mk-c4 $mk-bg $mk-bg
   client.urgent           $mk-a1 $mk-bg $mk-c4 $mk-bg $mk-bg
@@ -466,4 +466,4 @@ mode "$mode_gaps_outer" {
 
 exec --no-startup-id ~/bin/xeventbind resolution nitrogen --restore; killall -9 conky; start_conky_maia
 
-
+exec --no-startup-id redshift
