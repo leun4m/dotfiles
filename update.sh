@@ -7,7 +7,7 @@ normal=$(tput sgr0)
 # $1 => configuration name
 # $2 => source path
 # $3 => destination path
-copy_files ()
+copy_files()
 {
 	read -p "Do you wish to update ${bold}$1${normal}? [yN]" ANSWER
 	case $ANSWER in
@@ -44,7 +44,7 @@ update_dotfiles()
 }
 
 # Choose copy direction
-choose_direction ()
+choose_direction()
 {
 	while true; do
 		echo "1) ENV  -> REPO"
@@ -65,7 +65,6 @@ clear
 echo "COPY DOTFILES"
 echo "============="
 echo
-
 
 choose_direction
 
