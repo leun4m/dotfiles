@@ -9,6 +9,7 @@ Plug 'morhetz/gruvbox'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
