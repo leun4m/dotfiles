@@ -34,6 +34,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec termite
+bindsym $mod+Shift+Return open
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -58,11 +59,16 @@ bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -font "Ca
 #exec --no-startup-id pulseaudio --start
 exec --no-startup-id systemctl --user enable pulseaudio
 exec --no-startup-id pa-applet
-bindsym $mod+Ctrl+m exec pavucontrol
+bindsym $mod+n exec pavucontrol
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle & notify-send Volume toggle mute # mute sound
+# Using amixer to not get over 100%
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle & notify-send Volume toggle mute # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -74,8 +80,8 @@ bindsym XF86AudioStop exec playerctl stop
 ################################################################################################
 
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
 #bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -93,7 +99,7 @@ bindsym XF86AudioStop exec playerctl stop
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+Print --release exec --no-startup-id i3-scrot -d
-bindsym $mod+F1 --release exec .i3/shortcuts.sh
+bindsym $mod+F1 --release exec --no-startup-id .i3/shortcuts.sh
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+P exec ls .screenlayout/ | rofi -dmenu -p 'Display Mode' -theme .config/rofi.rasi | (echo -n .screenlayout/ && cat) | sh
 bindsym $mod+Ctrl+P exec --no-startup-id arandr
@@ -213,10 +219,8 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
 assign [class="Thunderbird"] $ws8
-assign [class="telegram-desktop"] $ws6
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+assign [instance="telegram-desktop"] $ws6
+assign [class="Spotify"] $ws7
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -247,8 +251,6 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
-for_window [class="Spotify"] move to workspace $ws7
-assign [instance="telegram-desktop"] $ws6
 
 for_window [class="jetbrains-.*" title="win0"] floating enable border none
 
@@ -311,7 +313,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id manjaro-hello
+exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -467,3 +469,7 @@ mode "$mode_gaps_outer" {
 exec --no-startup-id ~/bin/xeventbind resolution nitrogen --restore; killall -9 conky; start_conky_maia
 
 exec --no-startup-id redshift
+
+# Key bindings
+bindsym $mod+F2 --release exec "notify-send 'Switching...'; xmodmap ~/.i3/speedswapper; notify-send --urgency=critical 'Switched ESC <-> CAPS'"
+
