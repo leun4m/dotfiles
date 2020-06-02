@@ -1,6 +1,8 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id feh --bg-scale Pictures/wallpaper.jpg
+exec --no-startup-id i3-battery-popup
+exec_always --no-startup-id picom
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -101,13 +103,14 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+Print --release exec --no-startup-id i3-scrot -d
 bindsym $mod+F1 --release exec --no-startup-id .i3/shortcuts.sh
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+P exec ls .screenlayout/ | rofi -dmenu -p 'Display Mode' -theme .config/rofi.rasi | (echo -n .screenlayout/ && cat) | sh
+bindsym $mod+P exec ls .screenlayout/ | rofi -dmenu -p 'Display Mode' -theme .config/rofi.rasi | (echo -n .screenlayout/ && cat) | sh && feh --bg-scale ~/Pictures/wallpaper.jpg
 bindsym $mod+Ctrl+P exec --no-startup-id arandr
 bindsym $mod+Z exec firefox
 bindsym $mod+U exec chromium
 bindsym $mod+I exec thunderbird
 
 bindsym $mod+T exec --no-startup-id thunar
+bindsym $mod+b exec spotify
 
 focus_follows_mouse no
 
@@ -220,9 +223,12 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # Open applications on specific workspaces
 assign [class="Thunderbird"] $ws8
 assign [instance="telegram-desktop"] $ws6
-assign [class="Spotify"] $ws7
+for_window [class="Spotify"] move to workspace $ws7
 
 # Open specific applications in floating mode
+for_window [title="Freundesliste"] floating enable
+for_window [title="Blender Preferences"] floating enable
+for_window [class="Gnome-calendar"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -313,7 +319,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id manjaro-hello
+#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -325,8 +331,6 @@ exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-#exec_always --no-startup-id –/.config/polybar/launch.sh &
-
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
@@ -368,34 +372,34 @@ set $mk-b3 #334D66
 set $mk-a1 #e5201d
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar { 
-	i3bar_command i3bar
-	status_command i3status --config ~/.i3/status.conf
-	position bottom
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-	tray_output primary
-	tray_output eDP1
-
-	bindsym button4 nop
-	bindsym button5 nop
-  	font xft:Hermit Bold 8
-	strip_workspace_numbers yes
-
-   colors {
-        background $mk-bg
-        statusline $mk-c2
-        separator  $mk-b2
-
-#                      border  backgr. text
-        focused_workspace  $mk-c2 $mk-c2 $mk-bg
-        active_workspace   $mk-bg $mk-bg $mk-c2
-        inactive_workspace $mk-bg $mk-bg $mk-c2
-        binding_mode       $mk-bg $mk-bg $mk-c2
-        urgent_workspace   $mk-a1 $mk-bg $mk-a1
-    }
-}
-
+#bar { 
+	#i3bar_command i3bar
+	#status_command i3status --config ~/.i3/status.conf
+	#position bottom
+#
+### please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+	#tray_output primary
+	#tray_output eDP1
+#
+	#bindsym button4 nop
+	#bindsym button5 nop
+  	#font xft:Hermit Bold 8
+	#strip_workspace_numbers yes
+#
+   #colors {
+        #background $mk-bg
+        #statusline $mk-c2
+        #separator  $mk-b2
+#
+##                      border  backgr. text
+        #focused_workspace  $mk-c2 $mk-c2 $mk-bg
+        #active_workspace   $mk-bg $mk-bg $mk-c2
+        #inactive_workspace $mk-bg $mk-bg $mk-c2
+        #binding_mode       $mk-bg $mk-bg $mk-c2
+        #urgent_workspace   $mk-a1 $mk-bg $mk-a1
+    #}
+#}
+#
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
@@ -471,5 +475,6 @@ exec --no-startup-id ~/bin/xeventbind resolution nitrogen --restore; killall -9 
 exec --no-startup-id redshift
 
 # Key bindings
-bindsym $mod+F2 --release exec "notify-send 'Switching...'; xmodmap ~/.i3/speedswapper; notify-send --urgency=critical 'Switched ESC <-> CAPS'"
+bindsym $mod+F2 --release exec "notify-send 'Switching...'; xmodmap ~/.i3/.speedswapper; notify-send --urgency=critical 'Switched ESC <-> CAPS'"
 
+exec_always --no-startup-id killall polybar; polybar leun4m 
