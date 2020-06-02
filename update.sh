@@ -23,6 +23,7 @@ update_env()
 	echo "Updating dotfiles => ~"
 	echo
 	copy_files i3 .i3/ ~/.i3/
+	copy_files bash .bashrc ~/.bashrc
 	copy_files Xresources .Xresources ~
 	copy_files rofi .config/rofi.rasi ~/.config/
 	copy_files termite .config/termite/ ~/.config/
@@ -38,6 +39,7 @@ update_dotfiles()
 	echo
 	DOTDIR=$( dirname $0 )
 	copy_files i3 ~/.i3/ $DOTDIR
+	copy_files bash ~/.bashrc $DOTDIR
 	copy_files Xresources ~/.Xresources $DOTDIR
 	copy_files rofi ~/.config/rofi.rasi "$DOTDIR/.config"
 	copy_files termite ~/.config/termite "$DOTDIR/.config"
