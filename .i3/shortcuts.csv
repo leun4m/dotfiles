@@ -29,7 +29,7 @@ F12,,,
 9,Lock screen,,
 0,Shutdown / Logout / Reboot,,
 ,,,
-TAB,Switch to last D,Move to last D,
+TAB,Switch to last D,Move to last D,Show all windows
 q,Toggle split,Kill window,
 w,Change layout to tabbed,,
 e,Change layout to split,Exit,
