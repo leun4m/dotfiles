@@ -1,8 +1,8 @@
 * {
     color-1: #41ad18;
-    backgroundcolor: #111111;
+    backgroundcolor: #000d;
     bg1: #ffffff;
-    backgroundcoloralternate: #111111;
+    backgroundcoloralternate: #00000088;
     separatorcolor: #0a0a0a;
     scrollbarcolor: #3b4252;
     foregroundcolor: #bbbbbb;
@@ -10,12 +10,14 @@
     selectioncolor: #82da62;
 
     border-color: #111111;
-    background-color: @backgroundcolor;
+    /*background-color: @backgroundcolor;*/
+    background-color: transparent;  
     text-color: @foregroundcolor;
     margin: 2;
     margin-bottom: 0;
     margin-top: 0;
     spacing: 0;
+    font: "Cantarell 18";
 }
 
 #listview {
@@ -23,46 +25,50 @@
     scrollbar: false;
     margin: 2;
     dynamic: true;
-
 }
 
 #window {
     background-color: @backgroundcolor;
-    border-color: @separatorcolor;
     border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#overlay {
+    enabled: false;
 }
 
 #mainbox {
     border: 0;
-    padding: 0;
-    background-color: @backgroundcoloralternate;
+    padding: 4;
+    margin: 0;
 }
 
 #element {
     padding: 6;
     border: 0 0 0 0;
-    border-color: @separatorcolor;
-    background-color: @backgroundcoloralternate;
+    /*border-color: @separatorcolor;*/
+    background-color: transparent;
 }
 
 #element.selected.normal {
     color: @selectioncolor;
     border-radius: 10px;
-
+    background-color: @backgroundcolor;
     border: 0 0 0 0;
     border-color: @separatorcolor;
 }
 
 #element.alternate.normal {
-    background-color: @backgroundcoloralternate;
+    /*background-color: @backgroundcoloralternate;*/
 }
 
 #element.normal.active {
-    background-color: #434c5e;
+    /*background-color: #434c5e;*/
 }
 
 #element.alternate.active {
-    background-color: #434c5e;
+    /*background-color: #434c5e;*/
 }
 
 #element.selected.active {
@@ -74,21 +80,26 @@
 }
 
 #inputbar {
-    border: 0 solid 0 solid 1 solid 0 solid;
+    border: 0 0 0 0;
     margin: 0;
     spacing: 0;
-    border-color: @separatorcolor;
+
 }
 
 #prompt {
     padding: 4;
-    background-color: @backgroundcoloralternate;
-    border: 0 1 0 0;
+    border: 0 0 0 0;
     color: @color-1;
 }
 
 #entry {
     padding: 4;
+    highlight: bold;
+}
+
+#textbox {
+    blink: false;
+    highlight: bold;
 }
 
 #scrollbar {

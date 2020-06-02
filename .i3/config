@@ -42,7 +42,7 @@ bindsym $mod+Shift+Return open
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -font "Cantarell 16" -drun-display-format "{name} <span size='x-small'><tt>{exec}</tt></span>" -theme .config/rofi.rasi
+bindsym $mod+d exec --no-startup-id rofi -show drun -display-drun ">>>" -show-icons -font "Cantarell 16" -drun-display-format "{name} <span size='x-small'><tt>{exec}</tt></span>" -theme .config/rofi.rasi
 
 # start calculator
 bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -font "Cantarell 16" -drun-display-format "{name} <span size='x-small'><tt>{exec}</tt></span>" -theme .config/rofi.rasi
