@@ -131,10 +131,10 @@ set $mk-a1 #e5201d
 floating_modifier $mod
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+H focus left
+bindsym $mod+J focus down
+bindsym $mod+K focus up
+bindsym $mod+L focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -143,10 +143,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+H move left
+bindsym $mod+Shift+J move down
+bindsym $mod+Shift+K move up
+bindsym $mod+Shift+L move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -160,34 +160,34 @@ bindsym $mod+Shift+Tab move container to workspace back_and_forth; workspace bac
 bindsym $mod+Ctrl+Tab exec rofi -show window -theme .config/rofi.rasi
 
 # split orientation
-bindsym $mod+q split toggle
+bindsym $mod+Q split toggle
 
 # toggle fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+F fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+S layout stacking
+bindsym $mod+W layout tabbed
+bindsym $mod+E layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+f floating toggle
+bindsym $mod+Shift+F floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Ctrl+f focus mode_toggle
+bindsym $mod+Ctrl+F focus mode_toggle
 
 # toggle sticky
-bindsym $mod+Shift+s sticky toggle
+bindsym $mod+Shift+S sticky toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+A focus parent
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+Minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+bindsym $mod+Minus scratchpad show
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -224,13 +224,13 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+C reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+R restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+E exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -250,7 +250,7 @@ mode "$mode_system" {
 }
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+bindsym $mod+R mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         # Pressing left will shrink the window’s width.
@@ -277,7 +277,7 @@ mode "resize" {
 bindsym $mod+9 exec --no-startup-id blurlock
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+Q kill
 
 # i3 GAPS -------------------------------------------------------------------- #
 
@@ -285,7 +285,7 @@ bindsym $mod+Shift+q kill
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
+bindsym $mod+Shift+G mode "$mode_gaps"
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
@@ -330,7 +330,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+F1 --release exec --no-startup-id .i3/shortcuts.sh
 # switch ESC <-> CAPS LOCK
 bindsym $mod+F2 --release exec "notify-send 'Switching...'; xmodmap ~/.i3/.speedswapper; notify-send --urgency=critical 'Switched ESC <-> CAPS'"
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+Ctrl+X --release exec --no-startup-id xkill
 
 # start program launcher
 bindsym $mod+space exec --no-startup-id rofi -show drun -display-drun ">>>" -show-icons -drun-display-format "{name} <span size='x-small'><tt>{exec}</tt></span>" -theme .config/rofi.rasi
@@ -339,30 +339,30 @@ bindsym $mod+space exec --no-startup-id rofi -show drun -display-drun ">>>" -sho
 bindsym $mod+Shift+Return open
 
 # start calculator
-bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -drun-display-format "{name} <span size='x-small'><tt>{exec}</tt></span>" -theme .config/rofi.rasi
+bindsym $mod+C exec rofi -show calc -modi calc -no-show-match -no-sort -theme .config/rofi.rasi
 
 # SOUND
 
 # show sound control
-bindsym $mod+n exec pavucontrol
+bindsym $mod+N exec pavucontrol
 
 # Using amixer to not get over 100%
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioMute        exec --no-startup-id amixer set Master toggle
 
 # Media player keys
-bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPlay  exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext  exec playerctl next
+bindsym XF86AudioPrev  exec playerctl previous
+bindsym XF86AudioStop  exec playerctl stop
 
 # DISPLAY
 
 # Screen brightness keys
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp   exec --no-startup-id "brightnessctl set 10%+ && notify-send '☀ '$( brightnessctl -m | cut --delimiter=, --fields=4 )"
+bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl set 10%- && notify-send '☀ '$( brightnessctl -m | cut --delimiter=, --fields=4 )"
 
 # Screenshots
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -371,16 +371,16 @@ bindsym $mod+Ctrl+Print --release exec --no-startup-id i3-scrot -d
 
 # Display settings
 bindsym $mod+P exec --no-startup-id autorandr --load $(autorandr --detected | rofi -dmenu -theme .config/rofi.rasi)
-bindsym $mod+shift+P exec ls .screenlayout/ | rofi -dmenu -p 'Display Mode' -theme .config/rofi.rasi | (echo -n .screenlayout/ && cat) | sh && feh --bg-scale ~/Pictures/wallpaper.jpg
+bindsym $mod+Shift+P exec ls .screenlayout/ | rofi -dmenu -p 'Display Mode' -theme .config/rofi.rasi | (echo -n .screenlayout/ && cat) | sh && feh --bg-scale ~/Pictures/wallpaper.jpg
 bindsym $mod+Ctrl+P exec --no-startup-id arandr
 
 # COMMON PROGRAMS
 
-bindsym $mod+z exec firefox
-bindsym $mod+u exec chromium
-bindsym $mod+i exec thunderbird
-bindsym $mod+t exec thunar
-bindsym $mod+b exec spotify
+bindsym $mod+Z exec firefox
+bindsym $mod+U exec chromium
+bindsym $mod+I exec thunderbird
+bindsym $mod+T exec thunar
+bindsym $mod+B exec spotify
 
 ################################################################################
 # 5. Things to always run                                                      #
