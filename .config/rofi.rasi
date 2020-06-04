@@ -1,8 +1,10 @@
+/* vim:ft=css
+ */
 * {
     color-1: #41ad18;
     backgroundcolor: #000d;
     bg1: #ffffff;
-    backgroundcoloralternate: #00000088;
+    backgroundcoloralternate: #00000044;
     separatorcolor: #0a0a0a;
     scrollbarcolor: #3b4252;
     foregroundcolor: #bbbbbb;
@@ -52,9 +54,9 @@
 }
 
 #element.selected.normal {
-    color: @selectioncolor;
+    color: @backgroundcolor;
     border-radius: 10px;
-    background-color: @backgroundcolor;
+    background-color: @selectioncolor;
     border: 0 0 0 0;
     border-color: @separatorcolor;
 }
