@@ -2,7 +2,7 @@
 ESC,,,
 Backspace,,,
 Enter,Open new terminal,,
-Space,Toggle focus,Toggle floating,
+Space,Open launcher,,
 Print,Take screenshot (window),Take screenshot (area),Take screenshot (ws)
 ,,,
 F1,Show help,,
@@ -39,12 +39,12 @@ z,Open firefox,,
 u,Open chromium,,
 i,Open thunderbird,,
 o,,,
-p,Change display layout,,Change display settings
+p,Change display layout (autorandr),Change display layout,Change display settings
 ,,,
 a,Focus parent,,
 s,Change layout to stacking,,
-d,Open launcher,,
-f,Toggle fullscreen,,
+d,,,
+f,Toggle fullscreen,Toggle floating,Toggle focus (floating <-> normal)
 g,,Change gaps,
 h,Focus left,Move left,
 j,Focus down,Move down,
