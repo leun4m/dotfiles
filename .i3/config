@@ -362,7 +362,7 @@ bindsym XF86AudioStop  exec playerctl stop
 
 # Screen brightness keys
 bindsym XF86MonBrightnessUp   exec --no-startup-id "brightnessctl set 10%+ && notify-send '☀ '$( brightnessctl -m | cut --delimiter=, --fields=4 )"
-bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl set 10%- && notify-send '☀ '$( brightnessctl -m | cut --delimiter=, --fields=4 )"
+bindsym XF86MonBrightnessDown exec --no-startup-id "brightnessctl --min-value=1 set 10%- && notify-send '☀ '$( brightnessctl -m | cut --delimiter=, --fields=4 )"
 
 # Screenshots
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
