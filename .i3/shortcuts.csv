@@ -1,7 +1,7 @@
 ,Super,Super + Shift,Super + Ctrl
 ESC,,,
 Backspace,,,
-Enter,Open new terminal,,
+Enter,Open new terminal,Open bash,Empty space
 Space,Open launcher,,
 Print,Take screenshot (window),Take screenshot (area),Take screenshot (ws)
 ,,,
