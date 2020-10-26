@@ -2,7 +2,7 @@
 ESC,,,
 Backspace,,,
 Enter,Open new terminal,Open bash,Empty space
-Space,Open launcher,,
+Space,,,
 Print,Take screenshot (window),Take screenshot (area),Take screenshot (ws)
 ,,,
 F1,Show help,,
@@ -31,14 +31,14 @@ F12,,,
 ,,,
 TAB,Switch to last D,Move to last D,Show all windows
 q,Toggle split,Kill window,
-w,Change layout to tabbed,,
-e,Change layout to split,Exit,
+w,Change layout to split,Change to tabbed,Change to stacked
+e,Change split orientation,,
 r,Resize,Restart i3,
 t,Open thunar,,
 z,Open firefox,,
-u,Open chromium,,
-i,Open thunderbird,,
-o,,,
+u,Open brave,,
+i,Open evolution,,
+o,Open keepass,,
 p,Change display layout (autorandr),Change display layout,Change display settings
 ,,,
 a,Focus parent,,
@@ -52,7 +52,7 @@ k,Focus up,Move up,
 l,Focus right,Move right,
 ,,,
 y,,,
-x,,,Kill programm (X11)
+x,Open launcher,,Kill programm (X11)
 c,Open calculator,Reload i3 config,
 v,,,
 b,,,

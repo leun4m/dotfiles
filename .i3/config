@@ -37,8 +37,8 @@ for_window [urgent=latest] focus
 # i3 GAPS ------------------------------------------------------------------- #
 
 # Set inner/outer gaps
-gaps inner 0
-gaps outer 0
+gaps inner 4
+gaps outer 4
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -166,8 +166,11 @@ bindsym $mod+Q split toggle
 bindsym $mod+F fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+S layout stacking
-bindsym $mod+W layout tabbed
+bindsym $mod+W layout default
+bindsym $mod+Shift+W layout tabbed
+bindsym $mod+Ctrl+W layout stacked
+
+# toggle orientation
 bindsym $mod+E layout toggle split
 
 # toggle tiling / floating
@@ -230,7 +233,7 @@ bindsym $mod+Shift+C reload
 bindsym $mod+Shift+R restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+E exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+E exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -334,7 +337,7 @@ bindsym $mod+F2 --release exec "notify-send 'Switching...'; xmodmap ~/.i3/.speed
 bindsym $mod+Ctrl+X --release exec --no-startup-id xkill
 
 # start program launcher
-bindsym $mod+space exec --no-startup-id rofi -show drun -display-drun ">>>" -show-icons -drun-display-format "{name} <span size='x-small'><tt>{exec}</tt></span>" -theme .config/rofi.rasi
+bindsym $mod+X exec --no-startup-id rofi -show drun -display-drun ">>>" -show-icons -drun-display-format "{name} <span size='x-small'><tt>{exec}</tt></span>" -theme .config/rofi.rasi
 
 # opens a blank space
 bindsym $mod+Ctrl+Return open
@@ -378,8 +381,9 @@ bindsym $mod+Ctrl+P exec --no-startup-id arandr
 # COMMON PROGRAMS
 
 bindsym $mod+Z exec firefox
-bindsym $mod+U exec chromium
-bindsym $mod+I exec thunderbird
+bindsym $mod+U exec brave
+bindsym $mod+I exec evolution
+bindsym $mod+O exec keepassxc
 bindsym $mod+T exec thunar
 bindsym $mod+B exec spotify
 
@@ -388,9 +392,9 @@ bindsym $mod+B exec spotify
 ################################################################################
 
 exec_always --no-startup-id autorandr --change && feh --bg-scale Pictures/wallpaper.jpg; killall polybar; polybar leun4m 
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --inactive-opacity=1 --frame-opacity=1
 exec --no-startup-id xmodmap ~/.i3/.speedswapper
-exec --no-startup-id redshift
+#exec --no-startup-id redshift
 exec --no-startup-id i3-battery-popup
 
 # Sound
