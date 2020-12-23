@@ -333,7 +333,7 @@ bindsym $mod+Shift+Return exec termite -e bash
 
 bindsym $mod+F1 --release exec --no-startup-id .i3/shortcuts.sh
 # switch ESC <-> CAPS LOCK
-bindsym $mod+F2 --release exec "notify-send 'Switching...'; xmodmap ~/.i3/.speedswapper; notify-send --urgency=critical 'Switched ESC <-> CAPS'"
+bindsym $mod+F2 --release exec "notify-send 'Switching...'; xmodmap ~/.i3/speedswapper; notify-send --urgency=critical 'Switched ESC <-> CAPS'"
 bindsym $mod+Ctrl+X --release exec --no-startup-id xkill
 
 # start program launcher
