@@ -29,6 +29,7 @@ update_env()
 	copy_files termite .config/termite/ ~/.config/
 	copy_files nvim .config/nvim/init.vim ~/.config/nvim/
 	copy_files polybar .config/polybar/ ~/.config/polybar/
+	copy_files dunst .config/dunst/dunstrc ~/.config/dunst/dunstrc
 }
 
 # Will update the dotfile repo
@@ -45,6 +46,7 @@ update_dotfiles()
 	copy_files termite ~/.config/termite "$DOTDIR/.config"
 	copy_files nvim ~/.config/nvim/init.vim "$DOTDIR/.config/nvim"
 	copy_files polybar ~/.config/polybar "$DOTDIR/.config"
+	copy_files dunst ~/.config/dunstrc "$DOTDIR/.config"
 }
 
 # Choose copy direction
