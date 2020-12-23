@@ -8,7 +8,7 @@ Feel free to use and adopt.
 
 ## Dependencies
 
-- [.i3/dependencies.txt]
+- [Directly needed by i3-config](.i3/dependencies.txt)
 
 ### AUR
 
@@ -18,7 +18,7 @@ Feel free to use and adopt.
 ## Touchpad - `libinput`
 
 1. install `xf86-input-libinput`
-2. copy files from [xorg.conf.d/] to /etc/X11/xorg.conf.d/
+2. copy files from [xorg.conf.d/](xorg.conf.d/) to /etc/X11/xorg.conf.d/
 
 ## CHANGELOG
 
