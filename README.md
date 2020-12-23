@@ -15,3 +15,7 @@ Feel free to use and adopt.
 1. install `xf86-input-libinput`
 2. copy files from [xorg.conf.d/](xorg.conf.d/) to /etc/X11/xorg.conf.d/
 
+## CHANGELOG
+
+6ee4a75 - Deleted old i3 files including lock-configuration and i3status config
+
