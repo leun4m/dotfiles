@@ -1,5 +1,5 @@
 set number
-" set relativenumber
+set relativenumber
 
 set autoindent
 
@@ -11,13 +11,13 @@ Plug 'morhetz/gruvbox'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-
+Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 
 Plug 'leun4m/tex-conceal.vim', {'for': 'tex'}
 Plug 'airblade/vim-gitgutter'
 " Plug 'davidhalter/jedi-vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
@@ -27,7 +27,7 @@ set noshowmode
 " Gruvbox config
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
-highlight Normal ctermbg=None
+" highlight Normal ctermbg=None
 
 " Markdown Preview
 let vim_markdown_preview_github = 1
@@ -59,7 +59,7 @@ let g:jedi#auto_initialization = 0
 
 function! UseTabs()
 	set tabstop=4		" Size of a hard tabstop
-	set shiftwidth=4	" Size of an idention
+	" 	set shiftwidth=4	" Size of an idention
 	set softtabstop=0	" Insert 0 spaces on TAB
 	set noexpandtab		" Always uses tabs instead of spaces
 endfunction
