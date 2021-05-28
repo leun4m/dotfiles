@@ -30,6 +30,7 @@ update_env()
 	copy_files nvim .config/nvim/init.vim ~/.config/nvim/
 	copy_files polybar .config/polybar/ ~/.config/polybar/
 	copy_files dunst .config/dunst/dunstrc ~/.config/dunst/dunstrc
+	copy_files alacritty .config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 }
 
 # Will update the dotfile repo
@@ -47,6 +48,7 @@ update_dotfiles()
 	copy_files nvim ~/.config/nvim/init.vim "$DOTDIR/.config/nvim"
 	copy_files polybar ~/.config/polybar "$DOTDIR/.config"
 	copy_files dunst ~/.config/dunstrc "$DOTDIR/.config"
+	copy_files alacritty ~/.config/alacritty/ "$DOTDIR/.config"
 }
 
 # Choose copy direction
