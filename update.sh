@@ -11,7 +11,7 @@ copy_files()
 {
 	read -p "Do you wish to update ${bold}$1${normal}? [yN]" ANSWER
 	case $ANSWER in
-		[Yy]* ) cp --recursive $2 $3;;
+		[Yy]* ) cp $2 $3;;
 		* ) echo " $1 ignored";;
 	esac
 }

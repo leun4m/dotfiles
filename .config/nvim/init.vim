@@ -9,18 +9,23 @@ call plug#begin()
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'morhetz/gruvbox'
-Plug 'JamshedVesuna/vim-markdown-preview'
-Plug 'conornewton/vim-pandoc-markdown-preview'
-Plug 'vim-pandoc/vim-pandoc'
+"Plug 'JamshedVesuna/vim-markdown-preview'
+"Plug 'conornewton/vim-pandoc-markdown-preview'
+"Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
+"Plug 'vim-latex/vim-latex'
 
-Plug 'leun4m/tex-conceal.vim', {'for': 'tex'}
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'}
 Plug 'airblade/vim-gitgutter'
 "Plug 'davidhalter/jedi-vim'
-Plug 'valloric/youcompleteme' 
+"Plug 'valloric/youcompleteme' 
 Plug 'editorconfig/editorconfig-vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 call plug#end()
 
 " Lightline replaces showmode 
@@ -84,3 +89,11 @@ autocmd Filetype yaml setlocal tabstop=4
 let g:md_pdf_viewer="mupdf-x11"
 let g:md_args="--template eisvogel --listings"
 
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Treesitter
+lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}
