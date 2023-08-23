@@ -7,4 +7,3 @@ require("keybindings")
 require("treesitter")
 require("lsp")
 
-
